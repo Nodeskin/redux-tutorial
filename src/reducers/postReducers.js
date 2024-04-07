@@ -9,14 +9,21 @@ const initialState = {
 
 }
 
-export default function (state= initialState, action){
+//NB: action is an object that has a type
+export default function(state= initialState, action){
 switch (action.type) {
     case FETCH_POSTS:
-        return {
-//This return the state and the item being fetchd
+        return {          
             ...state,
             items: action.payload
+ //This return the state and the items being fetchd
+ //recall from the "postAction component" where; payload : posts
         };
+    case NEW_POST:
+        return{
+            ...state,
+            item:  action.payload,
+        }
 
     default:
      return state;
