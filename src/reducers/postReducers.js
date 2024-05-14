@@ -22,7 +22,8 @@ switch (action.type) {
     case NEW_POST:
         return{
             ...state,
-            item:  action.payload,
+            item: action.payload,
+          
         }
 
     default:

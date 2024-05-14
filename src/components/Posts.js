@@ -11,11 +11,11 @@ class Posts extends Component {
     this.props.fetchPosts();
   }
 
-  // componentWillRecieveProps(nextProps) {
-  //   if (nextProps.newPost) {
-  //     this.props.posts.unshift(nextProps.newPost)
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newPost) {
+      this.props.posts.unshift(nextProps.newPost)
+    }
+  }
 
   render() {
     const postItems = this.props.posts.map((post) => (
@@ -39,11 +39,11 @@ Posts.propTypes = {
   newPost: PropTypes.object,
 };
 
-//state.posts bcus the rootReducer is set to posts
+//state.posts bcus the rootReducer is set to posts.
+//mapStateToProps gets the state from redux and map it to the properties of the component
 const mapStateToProps = (state) => ({
   posts: state.posts.items,
-  newPost: state.posts.item,
-  
+  newPost: state.posts.item
 });
 //export connect to link the component to the redux store. Takes in 2 set of parenthesis
 //

@@ -13,13 +13,13 @@ const initialState = {};
 const middleware = [thunk];
 
 
-// we used ...middleware, because we can have more than one middlware
+// we used ...middleware, because we can have more than one middlware.
+//We use compose to add multiple enhancer, since we are adding a redux enhancer
 const store = createStore(
   rootReducer,
   initialState,
   compose(
     applyMiddleware(...middleware),
-
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );

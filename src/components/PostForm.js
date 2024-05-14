@@ -54,4 +54,4 @@ PostForm.prototypes = {
   createPost: PropTypes.func.isRequired
 }
 
-export default connect(null, {createPost}) (PostForm);
+export default connect(null, {createPost})(PostForm);
